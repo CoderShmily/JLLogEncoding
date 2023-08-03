@@ -71,7 +71,7 @@
             str = [NSString stringWithFormat:@"\n%@\"%@\" : %@,", subSpace, key, str];
             [retString appendString:str];
         } else {
-            NSString *subString = [NSString stringWithFormat:@"\n%@\"%@\" : %@,", subSpace, key, obj];
+            NSString *subString = [NSString stringWithFormat:@"\n%@\"%@\" : %@,", subSpace, key, [obj isKindOfClass:[NSNull class]]  ? @"null" : obj];
             [retString appendString:subString];
         }
     }];
